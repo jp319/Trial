@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.HelloController">
+   <children>
+      <Polyline fill="#083c63" layoutX="108.0" layoutY="54.0" points="-108.0, -53.999996185302734, 743.199951171875, -53.999996185302734, 743.199951171875, 426.0, -108.0, 426.0" stroke="#161d71" strokeType="INSIDE" />
+      <Polyline fill="#cad9df" layoutX="50.0" layoutY="116.0" points="378.79998779296875, -14.400009155273438, 378.79998779296875, 189.60000610351562, -50.00000762939453, 202.4000244140625, -50.000022888183594, -61.60000228881836" stroke="#fcfbfb" strokeType="INSIDE" />
+      <Polyline fill="#083c63" layoutX="50.0" layoutY="44.0" points="-50.00000762939453, -43.999996185302734, 378.0999755859375, -43.999996185302734, 378.0999755859375, 56.80000305175781, -50.000038146972656, 10.39999771118164" stroke="#083c63" strokeType="INSIDE" />
+      <ImageView fitHeight="347.0" fitWidth="475.0" layoutX="-24.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/BG.png" />
+         </image>
+      </ImageView>
+      <Polyline fill="#0f7299" layoutX="257.0" layoutY="479.0" points="594.1998291015625, -163.39999389648438, 594.1998291015625, -0.999969482421875, 117.39999389648438, -0.99993896484375, 447.0, -114.5999755859375" stroke="#0f7299" strokeType="INSIDE" />
+      <Polyline fill="#792706" layoutX="50.0" layoutY="461.0" points="801.1998291015625, -145.39999389648438, 801.1998291015625, 17.000030517578125, -50.0, 19.0, -50.00000762939453, -81.80001831054688" stroke="#7b898e" strokeType="INSIDE" />
+      <Polyline fill="#0f7299" layoutX="50.0" layoutY="380.0" points="378.99993896484375, -74.39999389648438, 563.5999755859375, -29.600006103515625, -50.0, 12.0, -50.000030517578125, -61.599945068359375" stroke="#0f7299" strokeType="INSIDE" />
+      <Polyline fill="#cad9df" layoutX="479.0" layoutY="110.0" points="245.0, -54.00000762939453, 245.0, 289.9999694824219, -50.00006103515625, 194.80001831054688, -50.00006103515625, -8.400009155273438" stroke="#fcfbfb" strokeType="INSIDE" />
+      <Polyline fill="#083c63" layoutX="479.0" layoutY="44.0" points="246.5999755859375, -43.99999237060547, 246.5999755859375, 20.79999542236328, -50.0, 56.80000305175781, -50.0, -43.999996185302734" stroke="#083c63" strokeType="INSIDE" />
+      <Polyline fill="#cad9df" layoutX="781.0" layoutY="75.0" points="70.199951171875, -8.600006103515625, 70.199951171875, 249.80001831054688, -57.0, 326.6000061035156, -57.0, -8.600006103515625" stroke="#fcfbfb" strokeType="INSIDE" />
+      <Polyline fill="#3d710a" layoutX="529.0" layoutY="154.0" points="60.933349609375, -31.46668243408203, 60.933349609375, 3.5999908447265625, -70.4000244140625, 22.266647338867188, -70.4000244140625, -12.399993896484375" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="CHARTREUSE" layoutX="540.0" layoutY="155.0" points="44.3333740234375, -27.26667022705078, 44.3333740234375, -3.800018310546875, -75.73330688476562, 13.799972534179688, -75.73330688476562, -9.133346557617188" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="#792706" layoutX="97.0" layoutY="461.0" points="754.1998291015625, -1.800018310546875, 292.6000061035156, 7.799957275390625, -97.00000762939453, 7.799957275390625, -50.0, -69.0" stroke="#792706" strokeType="INSIDE" />
+      <Polyline fill="#083c63" layoutX="555.0" layoutY="180.0" points="294.5999755859375, -180.0, 296.199951171875, -113.60000610351562, 169.0, -113.5999984741211, 169.0, -180.0" stroke="#083c63" strokeType="INSIDE" />
+      <ParallelCamera layoutX="155.0" layoutY="178.0" />
+      <AmbientLight color="CHARTREUSE" layoutX="491.0" layoutY="76.0" lightOn="true" />
+      <PointLight color="CHARTREUSE" layoutX="352.0" layoutY="399.0" lightOn="true" />
+      <AmbientLight color="CHARTREUSE" layoutX="188.0" layoutY="38.0" lightOn="true" />
+      <Line endX="65.59996032714844" endY="65.20001220703125" layoutX="136.0" layoutY="57.0" startX="65.59996032714844" startY="14.800003051757812" />
+      <Ellipse fill="DODGERBLUE" layoutX="202.0" layoutY="71.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Line endX="65.59996032714844" endY="65.20001220703125" layoutX="594.0" layoutY="47.0" startX="65.59996032714844" startY="14.800003051757812" />
+      <Ellipse fill="DODGERBLUE" layoutX="659.0" layoutY="61.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polyline fill="#00b3ff" layoutX="660.0" layoutY="153.0" points="44.79998779296875, -50.399993896484375, 44.79998779296875, 38.99998474121094, -40.0, 32.0, -40.0, -37.600006103515625" stroke="#00b3ff" strokeType="INSIDE" />
+      <Polyline fill="#00b3ff" layoutX="170.0" layoutY="165.0" points="77.39999389648438, -37.800010681152344, 77.39999389648438, 36.799957275390625, -16.199981689453125, 36.79997253417969, -16.199981689453125, -47.00001525878906" stroke="#00b3ff" strokeType="INSIDE" />
+      <Polyline fill="#3d710a" layoutX="804.0" layoutY="135.0" points="38.0, -18.399993896484375, 36.5999755859375, 15.20001220703125, -71.0, 25.600006103515625, -71.0, -7.399993896484375" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="CHARTREUSE" layoutX="794.0" layoutY="145.0" points="48.0, -28.399993896484375, 48.0, 1.20001220703125, -55.0, 9.20001220703125, -55.0, -17.20001220703125" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="#5d6357" layoutX="549.0" layoutY="226.0" points="51.13336181640625, -62.46669006347656, 51.13336181640625, 133.26666259765625, -31.39996337890625, 108.6666259765625, -31.39996337890625, -50.800018310546875" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="CHARTREUSE" layoutX="807.0" layoutY="260.0" points="-8.5999755859375, -20.79998779296875, -8.5999755859375, -3.20001220703125, -55.0, 9.20001220703125, -55.0, -9.600006103515625" stroke="CHARTREUSE" strokeType="INSIDE" />
+      <Polyline fill="#5d6357" layoutX="475.0" layoutY="220.0" points="43.66668701171875, -44.800018310546875, 43.66668701171875, 115.20001220703125, -24.199981689453125, 91.19998168945312, -24.20001220703125, -33.0" stroke="#cad9df" strokeType="INSIDE" />
+      <Polyline fill="CHARTREUSE" layoutX="817.0" layoutY="270.0" points="-23.2000732421875, -19.600006103515625, -23.2000732421875, -8.399993896484375, 11.0, -27.600006103515625, -23.2000732421875, -34.79998779296875" stroke="CHARTREUSE" strokeType="INSIDE" />
+      <Label layoutX="764.0" layoutY="128.0" prefHeight="18.0" prefWidth="67.0" rotate="-4.4" text="DEPARTURE" translateZ="1.0">
+         <font>
+            <Font name="Franklin Gothic Medium Italic" size="12.0" />
+         </font>
+      </Label>
+      <Pane fx:id="passenger5" layoutX="53.0" layoutY="251.0">
+         <children>
+            <ImageView fx:id="bag5" fitHeight="51.0" fitWidth="92.0" layoutX="27.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@images/blueTrolly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="person5" fitHeight="218.0" fitWidth="103.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/purpleTurtleNeckGirl.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="passenger4" layoutX="187.0" layoutY="254.0">
+         <children>
+            <ImageView fx:id="bag4" fitHeight="51.0" fitWidth="92.0" layoutX="24.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@images/blueTrolly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="person4" fitHeight="211.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/purpleSleeveGlassesGirl.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="passenger3" layoutX="319.0" layoutY="268.0">
+         <children>
+            <ImageView fx:id="bag3" fitHeight="47.0" fitWidth="85.0" layoutX="22.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@images/blueTrolly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="person3" fitHeight="202.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/greenTankTopGirl.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="passenger2" layoutX="442.0" layoutY="271.0">
+         <children>
+            <ImageView fx:id="bag2" fitHeight="47.0" fitWidth="85.0" layoutX="26.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@images/blueTrolly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="person2" fitHeight="195.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/greenCoolGuy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Ellipse fill="DODGERBLUE" layoutX="507.0" layoutY="249.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Ellipse fill="DODGERBLUE" layoutX="537.0" layoutY="249.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
+      <Pane fx:id="passenger1" layoutX="542.0" layoutY="267.0">
+         <children>
+            <ImageView fx:id="bag1" fitHeight="47.0" fitWidth="85.0" layoutX="31.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@images/blueTrolly.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="person1" fitHeight="195.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/blueHoodieGuy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label layoutX="487.0" layoutY="141.0" prefHeight="18.0" prefWidth="74.0" rotate="-8.8" text="IMMIGRATION">
+         <font>
+            <Font name="Franklin Gothic Medium Italic" size="12.0" />
+         </font>
+      </Label>
+      <Polyline fill="#083c63" layoutX="401.0" layoutY="81.0" points="11.000030517578125, -48.19999313354492, 28.000030517578125, 19.800003051757812, -10.600006103515625, 11.800003051757812, -64.19998168945312, -39.999996185302734" stroke="#083c63" strokeType="INSIDE" />
+   </children>
+</AnchorPane>
