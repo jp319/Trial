@@ -41,35 +41,31 @@ public class HelloController {
     @FXML public Pane passenger5;
     Stage stage;
     Scene scene;
-    public ArrayList<Passengers> passengers = new ArrayList<Passengers>();//Arraylist
-    public void setUpArraylist (ArrayList<Passengers> passengers) {
-        this.passengers = passengers;
+    int passengerToSceneTwo = 0;
+    String[] person = new String[5];
+    public void setPassengers(String imagePath, int passengerNumber) {
+        if (passengerNumber == 0) {
+            Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+            person1.setImage(newImage);
+            person[0] = imagePath;
+        } else if (passengerNumber == 1) {
+            Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+            person2.setImage(newImage);
+            person[1] = imagePath;
+        }  else if (passengerNumber == 2) {
+            Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+            person3.setImage(newImage);
+            person[2] = imagePath;
+        }  else if (passengerNumber == 3) {
+            Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+            person4.setImage(newImage);
+            person[3] = imagePath;
+        }  else if (passengerNumber == 4) {
+            Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+            person5.setImage(newImage);
+            person[4] = imagePath;
+        }
     }
-    public void setPassengersArraylist (ArrayList<Passengers> passengers) {
-        passengers.add(new Passengers(5, 5,"images/blueHoodieGuy.png"));
-        passengers.add(new Passengers(4, 4,"images/greenCoolGuy.png"));
-        passengers.add(new Passengers(3, 3,"images/greenTankTopGirl.png"));
-        passengers.add(new Passengers(2, 2,"images/purpleSleeveGlassesGirl.png"));
-        passengers.add(new Passengers(1, 1,"images/purpleTurtleNeckGirl.png"));
-    }
-    public void setPersonImage () {
-        String imagePath1 = passengers.get(4).getImagePath();
-        Image newImage1 =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath1)));
-        person1.setImage(newImage1);
-        String imagePath2 = passengers.get(3).getImagePath();
-        Image newImage2 =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath2)));
-        person2.setImage(newImage2);
-        String imagePath3 = passengers.get(2).getImagePath();
-        Image newImage3 =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath3)));
-        person3.setImage(newImage3);
-        String imagePath4 = passengers.get(1).getImagePath();
-        Image newImage4 =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath4)));
-        person4.setImage(newImage4);
-        String imagePath5 = passengers.get(0).getImagePath();
-        Image newImage5 =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath5)));
-        person5.setImage(newImage5);
-    }
-    int passengerToSceneTwo = 4;
     public void move (MouseEvent event) throws IOException, InterruptedException {
         Pane currentPassenger = getCurrentPane(event);
         movePassenger(event, currentPassenger, 3000, 840, 0);
@@ -78,7 +74,7 @@ public class HelloController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("two_d-view.fxml"));
         Parent root = loader.load();
         TwoDView twoDView = loader.getController();
-        twoDView.setCurrentPassenger(passengers.get(passengerToSceneTwo--).getImagePath());
+        twoDView.setCurrentPassenger(person[passengerToSceneTwo]);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -102,14 +98,19 @@ public class HelloController {
     }
     public Pane getCurrentPane (MouseEvent event) {
         if (event.getSource().equals(passenger1)) {
+            passengerToSceneTwo = 0;
             return passenger1;
         } else if (event.getSource().equals(passenger2)) {
+            passengerToSceneTwo = 1;
             return passenger2;
         } else if (event.getSource().equals(passenger3)) {
+            passengerToSceneTwo = 2;
             return passenger3;
         } else if (event.getSource().equals(passenger4)) {
+            passengerToSceneTwo = 3;
             return passenger4;
         } else if (event.getSource().equals(passenger5)) {
+            passengerToSceneTwo = 4;
             return passenger5;
         }
         return null;
