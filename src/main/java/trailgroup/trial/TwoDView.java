@@ -5,14 +5,21 @@ import javafx.animation.Interpolator;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.CacheHint;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.effect.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 public class TwoDView {
@@ -20,68 +27,12 @@ public class TwoDView {
     @FXML public ImageView bag_A;//On Scanner
     @FXML public ImageView bag_B;//Beside Passenger
     @FXML public Button startButton;//Buttons
-    public String[] imagePath = {//Images Paths
-            "images/blueHoodieGuy.png",
-            "images/greenCoolGuy.png",
-            "images/greenTankTopGirl.png",
-            "images/purpleSleeveGlassesGirl.png",
-            "images/purpleTurtleNeckGirl.png",
-            "images/yellowHoodieGuy.png"
-    };
-    public ArrayList<Passengers> passengers = new ArrayList<Passengers>();//Arraylist
-    public ArrayList<Bags> bags = new ArrayList<Bags>();
-    public int passengerID = 0;
-    public int bagID = 0;
-    /*
-    public void addPassenger (ActionEvent event) {
-        int id = passengerID++;
-        if (randomStat()) {
-            passengers.add(new Passengers(id, true, 0, Integer.toString(addBag(id)), createNewPassengerImgView()));
-        } else {
-            passengers.add(new Passengers(id, false,0,"No Bag", createNewPassengerImgView()));
-        }
-
+    Stage stage;
+    Scene scene;
+    public void setCurrentPassenger (String imagePath) {
+        Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
+        passenger.setImage(newImage);
     }
-     */
-    public int addBag (int passengerID) {
-        int id = bagID++;
-        bags.add(new Bags(Integer.toString(id), passengerID));
-        return id;
-    }
-    public boolean randomStat () {
-        Random random = new Random();
-        int randomInt = random.nextInt(2);
-        return randomInt != 0; //if randomInt != 0 return true
-    }
-
-
-
-
-
-
-
-    //JAVAFX
-    /*
-    public ImageView createNewPassengerImgView () {
-        File folder = new File("images/passengers");
-        List<File> fileList = Arrays.asList(Objects.requireNonNull(folder.listFiles()));
-        Collections.shuffle(fileList);
-        File file = fileList.get(0);
-        ImageView imageView =  new ImageView(file.getPath());
-        imageView.setFitWidth(200.0);
-        imageView.setFitHeight(150.0);
-        imageView.setX(41);
-        imageView.setY(260);
-
-        passenger0 =  new ImageView(file.getPath());
-        passenger0.setFitWidth(200.0);
-        passenger0.setFitHeight(150.0);
-        passenger0.setX(41);
-        passenger0.setY(260);
-        return passenger0;
-    }
-    */
-
 
 
     public ImageView getCurrentImage (MouseEvent event) {
@@ -166,7 +117,23 @@ public class TwoDView {
         moveBag.setCycleCount(1);
         moveBag.setByX(231);
         moveBag.setByY(0);
+        moveBag.setOnFinished(e -> {
+            try {
+                switchToSceneOne(event);
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         moveBag.play();
+
+    }
+    public void switchToSceneOne (MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
+        Parent root = loader.load();
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     private void fadeOut(ImageView bag, int duration) {
         FadeTransition fadeOut = new FadeTransition();

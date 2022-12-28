@@ -54,7 +54,7 @@
             <Font name="Franklin Gothic Medium Italic" size="12.0" />
          </font>
       </Label>
-      <Pane fx:id="passenger5" layoutX="53.0" layoutY="251.0">
+      <Pane fx:id="passenger5" layoutX="53.0" layoutY="251.0" onMouseClicked="#move">
          <children>
             <ImageView fx:id="bag5" fitHeight="51.0" fitWidth="92.0" layoutX="27.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
@@ -68,7 +68,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="passenger4" layoutX="187.0" layoutY="254.0">
+      <Pane fx:id="passenger4" layoutX="187.0" layoutY="254.0" onMouseClicked="#move">
          <children>
             <ImageView fx:id="bag4" fitHeight="51.0" fitWidth="92.0" layoutX="24.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
@@ -82,7 +82,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="passenger3" layoutX="319.0" layoutY="268.0">
+      <Pane fx:id="passenger3" layoutX="319.0" layoutY="268.0" onMouseClicked="#move">
          <children>
             <ImageView fx:id="bag3" fitHeight="47.0" fitWidth="85.0" layoutX="22.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
@@ -96,7 +96,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane fx:id="passenger2" layoutX="442.0" layoutY="271.0">
+      <Pane fx:id="passenger2" layoutX="442.0" layoutY="271.0" onMouseClicked="#move">
          <children>
             <ImageView fx:id="bag2" fitHeight="47.0" fitWidth="85.0" layoutX="26.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
@@ -112,7 +112,7 @@
       </Pane>
       <Ellipse fill="DODGERBLUE" layoutX="507.0" layoutY="249.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
       <Ellipse fill="DODGERBLUE" layoutX="537.0" layoutY="249.0" radiusX="8.0" radiusY="9.0" stroke="BLACK" strokeType="INSIDE" />
-      <Pane fx:id="passenger1" layoutX="542.0" layoutY="267.0">
+      <Pane fx:id="passenger1" layoutX="542.0" layoutY="267.0" onMouseClicked="#move">
          <children>
             <ImageView fx:id="bag1" fitHeight="47.0" fitWidth="85.0" layoutX="31.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
