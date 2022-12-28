@@ -29,12 +29,18 @@ public class TwoDView {
     @FXML public Button startButton;//Buttons
     Stage stage;
     Scene scene;
+    String finishedPerson = " ";
+    String[] person = new String[5];
+    int[] stats = new int[5];
+    public void setPersonAndStats (String[] person, int[] stats, String finishedPerson) {
+        this.person = person;
+        this.stats = stats;
+        this.finishedPerson = finishedPerson;
+    }
     public void setCurrentPassenger (String imagePath) {
         Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
         passenger.setImage(newImage);
     }
-
-
     public ImageView getCurrentImage (MouseEvent event) {
         if (event.getSource().equals(passenger)) {
             return passenger;
@@ -125,15 +131,35 @@ public class TwoDView {
             }
         });
         moveBag.play();
-
     }
     public void switchToSceneOne (MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
-        Parent root = loader.load();
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        if (finishedPerson.equals("person5")) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ExitScene.fxml"));
+            Parent root = loader.load();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+        } else {
+            makeFinishedInvisible();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
+            Parent root = loader.load();
+            HelloController helloController = loader.getController();
+            for (int i = 0; i < person.length; i++) {
+                helloController.setPassengers(person[i], i, stats[i]);
+            }
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+        }
         stage.setScene(scene);
         stage.show();
+    }
+    public void makeFinishedInvisible () {
+        switch (finishedPerson) {
+            case "person1" -> stats[0] = 0;
+            case "person2" -> stats[1] = 0;
+            case "person3" -> stats[2] = 0;
+            case "person4" -> stats[3] = 0;
+            case "person5" -> stats[4] = 0;
+        }
     }
     private void fadeOut(ImageView bag, int duration) {
         FadeTransition fadeOut = new FadeTransition();
