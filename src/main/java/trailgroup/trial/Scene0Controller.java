@@ -41,7 +41,7 @@ public class Scene0Controller {
         Parent root = loader.load();
         HelloController helloController = loader.getController();
         for (int i = 0; i < passengers.length; i++) {
-            helloController.setPassengers(passengers[i], i, stats[i]);
+            helloController.setPassengers(passengers[i], i, stats[i], isClickable[i]);
         }
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

@@ -1,13 +1,15 @@
 package trailgroup.trial;
 
+import javafx.animation.FadeTransition;
+import javafx.animation.Interpolator;
+import javafx.animation.PauseTransition;
 import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -16,10 +18,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.Objects;
-import java.util.ResourceBundle;
 
 public class HelloController {
     //Persons & Bags
@@ -39,13 +38,15 @@ public class HelloController {
     @FXML public Pane passenger3;
     @FXML public Pane passenger4;
     @FXML public Pane passenger5;
+    @FXML public Label lbWarning;
     Stage stage;
     Scene scene;
     int passengerToSceneTwo = 0;
     String finishedPerson = "";
     String[] person = new String[5];
     int[] stats = new int[5];
-    public void setPassengers(String imagePath, int passengerNumber, int stats) {
+    int[] isClickable = new int[5];
+    public void setPassengers(String imagePath, int passengerNumber, int stats, int isClickable) {
         if (passengerNumber == 0) {
             Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             person1.setImage(newImage);
@@ -53,6 +54,7 @@ public class HelloController {
             this.stats[0] = stats;
             person1.setOpacity(this.stats[0]);
             bag1.setOpacity(this.stats[0]);
+            this.isClickable[0] = isClickable;
         } else if (passengerNumber == 1) {
             Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             person2.setImage(newImage);
@@ -60,6 +62,7 @@ public class HelloController {
             this.stats[1] = stats;
             person2.setOpacity(this.stats[1]);
             bag2.setOpacity(this.stats[1]);
+            this.isClickable[1] = isClickable;
         }  else if (passengerNumber == 2) {
             Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             person3.setImage(newImage);
@@ -67,6 +70,7 @@ public class HelloController {
             this.stats[2] = stats;
             person3.setOpacity(this.stats[2]);
             bag3.setOpacity(this.stats[2]);
+            this.isClickable[2] = isClickable;
         }  else if (passengerNumber == 3) {
             Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             person4.setImage(newImage);
@@ -74,6 +78,7 @@ public class HelloController {
             this.stats[3] = stats;
             person4.setOpacity(this.stats[3]);
             bag4.setOpacity(this.stats[3]);
+            this.isClickable[3] = isClickable;
         }  else if (passengerNumber == 4) {
             Image newImage =new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
             person5.setImage(newImage);
@@ -81,11 +86,16 @@ public class HelloController {
             this.stats[4] = stats;
             person5.setOpacity(this.stats[4]);
             bag5.setOpacity(this.stats[4]);
+            this.isClickable[4] = isClickable;
         }
     }
     public void move (MouseEvent event) throws IOException, InterruptedException {
         Pane currentPassenger = getCurrentPane(event);
-        movePassenger(event, currentPassenger, 3000, 840, 0);
+        if (currentPassenger == null) {
+            showWarning();
+        } else {
+            movePassenger(event, currentPassenger, 3000, 840, 0);
+        }
     }
     public void switchToSceneTwo (MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("two_d-view.fxml"));
@@ -115,27 +125,55 @@ public class HelloController {
         movePassenger.play();
     }
     public Pane getCurrentPane (MouseEvent event) {
-        if (event.getSource().equals(passenger1)) {
+        if (event.getSource().equals(passenger1) && isClickable(isClickable[0])) {
             passengerToSceneTwo = 0;
             finishedPerson = "person1";
             return passenger1;
-        } else if (event.getSource().equals(passenger2)) {
+        } else if (event.getSource().equals(passenger2) && isClickable(isClickable[1])) {
             passengerToSceneTwo = 1;
             finishedPerson = "person2";
             return passenger2;
-        } else if (event.getSource().equals(passenger3)) {
+        } else if (event.getSource().equals(passenger3) && isClickable(isClickable[2])) {
             passengerToSceneTwo = 2;
             finishedPerson = "person3";
             return passenger3;
-        } else if (event.getSource().equals(passenger4)) {
+        } else if (event.getSource().equals(passenger4) && isClickable(isClickable[3])) {
             passengerToSceneTwo = 3;
             finishedPerson = "person4";
             return passenger4;
-        } else if (event.getSource().equals(passenger5)) {
+        } else if (event.getSource().equals(passenger5) && isClickable(isClickable[4])) {
             passengerToSceneTwo = 4;
             finishedPerson = "person5";
             return passenger5;
+        } else {
+            return null;
         }
-        return null;
+    }
+    public void showWarning () {
+        lbWarning.setOpacity(0.50);
+        lbWarning.setText("Passenger is not in front of the Queue");
+        FadeTransition fadeIn = new FadeTransition();
+        fadeIn.setNode(lbWarning);
+        fadeIn.setDuration(Duration.millis(1000));
+        fadeIn.setCycleCount(1);
+        fadeIn.setInterpolator(Interpolator.LINEAR);
+        fadeIn.setFromValue(0);
+        fadeIn.setToValue(1);
+        fadeIn.play();
+        PauseTransition pause = new PauseTransition(Duration.millis(500));
+        pause.setOnFinished(e -> {
+            FadeTransition fadeOut = new FadeTransition();
+            fadeOut.setNode(lbWarning);
+            fadeOut.setDuration(Duration.millis(1000));
+            fadeOut.setCycleCount(1);
+            fadeOut.setInterpolator(Interpolator.EASE_OUT);
+            fadeOut.setFromValue(1);
+            fadeOut.setToValue(0);
+            fadeOut.play();
+        });
+        pause.play();
+    }
+    public boolean isClickable (int OneOrZero) {
+        return OneOrZero == 1; //if OneOrZero === 1 return true
     }
 }

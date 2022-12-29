@@ -18,7 +18,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
@@ -32,6 +31,7 @@ public class TwoDView {
     String finishedPerson = " ";
     String[] person = new String[5];
     int[] stats = new int[5];
+    int[] isClickable = new int[5];
     public void setPersonAndStats (String[] person, int[] stats, String finishedPerson) {
         this.person = person;
         this.stats = stats;
@@ -140,11 +140,12 @@ public class TwoDView {
             scene = new Scene(root);
         } else {
             makeFinishedInvisible();
+            makeFinishedUnclickable();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
             Parent root = loader.load();
             HelloController helloController = loader.getController();
             for (int i = 0; i < person.length; i++) {
-                helloController.setPassengers(person[i], i, stats[i]);
+                helloController.setPassengers(person[i], i, stats[i], isClickable[i]);
             }
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -159,6 +160,27 @@ public class TwoDView {
             case "person3" -> stats[2] = 0;
             case "person4" -> stats[3] = 0;
             case "person5" -> stats[4] = 0;
+        }
+    }
+    public void makeFinishedUnclickable() { //Also set Next Passenger to Clickable
+        switch (finishedPerson) {
+            case "person1" -> {
+                isClickable[0] = 0;
+                isClickable[1] = 1;
+            }
+            case "person2" -> {
+                isClickable[1] = 0;
+                isClickable[2] = 1;
+            }
+            case "person3" -> {
+                isClickable[2] = 0;
+                isClickable[3] = 1;
+            }
+            case "person4" -> {
+                isClickable[3] = 0;
+                isClickable[4] = 1;
+            }
+            case "person5" -> isClickable[4] = 0;
         }
     }
     private void fadeOut(ImageView bag, int duration) {
