@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane fx:id="anchorPaneStage" prefHeight="540.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.TwoDView">
+<AnchorPane fx:id="anchorPaneStage" prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.TwoDView">
    <children>
       <ImageView fitHeight="480.0" fitWidth="840.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -38,9 +38,9 @@
          <image>
             <Image url="@images/ScannerFront_1.png" />
          </image></ImageView>
-      <HBox alignment="CENTER" layoutY="446.0" prefHeight="100.0" prefWidth="840.0" style="-fx-background-color: #99baf8;">
+      <HBox alignment="CENTER" layoutY="436.0" prefHeight="44.0" prefWidth="840.0" style="-fx-background-color: #99baf8;">
          <children>
-            <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#move" prefHeight="40.0" prefWidth="100.0" text="Start">
+            <Button fx:id="startButton" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#move" prefHeight="27.0" prefWidth="94.0" text="Start">
                <HBox.margin>
                   <Insets left="10.0" right="10.0" />
                </HBox.margin>
