@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 
-<AnchorPane fx:id="anchorPaneStage" prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.TwoDView">
+<AnchorPane fx:id="anchorPaneStage" prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.SceneTwoController">
    <children>
       <ImageView fitHeight="480.0" fitWidth="840.0" pickOnBounds="true" preserveRatio="true">
          <image>

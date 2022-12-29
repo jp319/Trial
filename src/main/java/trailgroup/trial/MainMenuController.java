@@ -6,7 +6,6 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,10 +15,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class Scene0Controller {
+public class MainMenuController {
     @FXML public Button start;
     @FXML public ImageView trava1;
     Stage stage;
@@ -55,11 +52,11 @@ public class Scene0Controller {
         rotation.play();
     }
     public void switchToSceneOne (ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("scene_one-view.fxml"));
         Parent root = loader.load();
-        HelloController helloController = loader.getController();
+        SceneOneController sceneOneController = loader.getController();
         for (int i = 0; i < passengers.length; i++) {
-            helloController.setPassengers(passengers[i], i, stats[i], isClickable[i]);
+            sceneOneController.setPassengers(passengers[i], i, stats[i], isClickable[i]);
         }
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);

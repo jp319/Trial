@@ -8,14 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ExitScene implements Initializable {
+public class ExitSceneController implements Initializable {
 
     @FXML public ImageView airplane;
     @FXML public Pane headBox;

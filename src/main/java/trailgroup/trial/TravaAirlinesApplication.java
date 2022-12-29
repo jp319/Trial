@@ -7,19 +7,18 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.util.Objects;
 
-public class Scene0Application extends Application {
+public class TravaAirlinesApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Scene0Application.class.getResource("Scene0.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TravaAirlinesApplication.class.getResource("main_menu-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("buttonStyle.css")).toExternalForm());
-        Scene0Controller scene0Controller = fxmlLoader.getController();
-        scene0Controller.rotate();
+        MainMenuController mainMenuController = fxmlLoader.getController();
+        mainMenuController.rotate();
         stage.setTitle("TRAVA AIRLINES");
         stage.setScene(scene);
         stage.setResizable(false);

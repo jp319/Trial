@@ -23,7 +23,7 @@ import javafx.util.Duration;
 import java.io.IOException;
 import java.util.*;
 
-public class TwoDView {
+public class SceneTwoController {
     @FXML public ImageView passenger;
     @FXML public ImageView bag_A;//On Scanner
     @FXML public ImageView bag_B;//Beside Passenger
@@ -136,18 +136,18 @@ public class TwoDView {
     }
     public void switchToSceneOne (MouseEvent event) throws IOException {
         if (finishedPerson.equals("person5")) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ExitScene.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("exit_scene-view.fxml"));
             Parent root = loader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
         } else {
             makeFinishedInvisible();
             makeFinishedUnclickable();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("scene_one-view.fxml"));
             Parent root = loader.load();
-            HelloController helloController = loader.getController();
+            SceneOneController sceneOneController = loader.getController();
             for (int i = 0; i < person.length; i++) {
-                helloController.setPassengers(person[i], i, stats[i], isClickable[i]);
+                sceneOneController.setPassengers(person[i], i, stats[i], isClickable[i]);
             }
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);

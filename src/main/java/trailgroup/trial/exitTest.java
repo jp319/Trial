@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class exitTest extends Application {
 
@@ -16,7 +15,7 @@ public class exitTest extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Scene0Application.class.getResource("ExitScene.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(TravaAirlinesApplication.class.getResource("exit_scene-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.setResizable(false);

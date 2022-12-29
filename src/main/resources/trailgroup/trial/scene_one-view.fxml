@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Polyline?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.HelloController">
+<AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.SceneOneController">
    <children>
       <Polyline fill="#083c63" layoutX="108.0" layoutY="54.0" points="-108.0, -53.999996185302734, 743.199951171875, -53.999996185302734, 743.199951171875, 426.0, -108.0, 426.0" stroke="#161d71" strokeType="INSIDE" />
       <Polyline fill="#cad9df" layoutX="50.0" layoutY="116.0" points="378.79998779296875, -14.400009155273438, 378.79998779296875, 189.60000610351562, -50.00000762939453, 202.4000244140625, -50.000022888183594, -61.60000228881836" stroke="#fcfbfb" strokeType="INSIDE" />

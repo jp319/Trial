@@ -17,10 +17,11 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+
 import java.io.IOException;
 import java.util.Objects;
 
-public class HelloController {
+public class SceneOneController {
     //Persons & Bags
     @FXML public ImageView person1;
     @FXML public ImageView bag1;
@@ -98,11 +99,11 @@ public class HelloController {
         }
     }
     public void switchToSceneTwo (MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("two_d-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("scene_two-view.fxml"));
         Parent root = loader.load();
-        TwoDView twoDView = loader.getController();
-        twoDView.setCurrentPassenger(person[passengerToSceneTwo]);
-        twoDView.setPersonAndStats(person, stats, finishedPerson);
+        SceneTwoController sceneTwoController = loader.getController();
+        sceneTwoController.setCurrentPassenger(person[passengerToSceneTwo]);
+        sceneTwoController.setPersonAndStats(person, stats, finishedPerson);
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
