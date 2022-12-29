@@ -12,12 +12,12 @@
 <AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.Scene0Controller">
    <children>
       <Rectangle fx:id="pane2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="415.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
-      <ImageView fitHeight="529.0" fitWidth="929.0" layoutX="-84.0" layoutY="-23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="480.0" fitWidth="840.0" layoutY="-18.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/BG_Exit.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000763" height="98.0" layoutY="407.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000763" height="98.0" layoutY="382.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="75.0" layoutX="548.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" width="185.0" />
       <Button fx:id="start" layoutX="553.0" layoutY="292.0" mnemonicParsing="false" onAction="#switchToSceneOne" prefHeight="42.0" prefWidth="174.0" styleClass="btn" stylesheets="@buttonStyle.css" text="Start" textFill="#f4f3f3">
          <font>
@@ -66,7 +66,7 @@
          </font></Label>
       <ImageView fx:id="trava1" fitHeight="284.0" fitWidth="307.0" layoutX="491.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/TravaFX_1.png" />
+            <Image url="@images/TravaFX_Logo.png" />
          </image>
       </ImageView>
    </children>
