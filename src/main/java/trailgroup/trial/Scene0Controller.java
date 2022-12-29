@@ -29,6 +29,13 @@ public class Scene0Controller {
             1,
             1
     };
+    int[] isClickable = {
+            1,
+            0,
+            0,
+            0,
+            0
+    };
     public void switchToSceneOne (ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
         Parent root = loader.load();
