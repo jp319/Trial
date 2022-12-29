@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="480.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trailgroup.trial.Scene0Controller">
    <children>
-      <Button fx:id="start" layoutX="394.0" layoutY="369.0" mnemonicParsing="false" onAction="#switchToSceneOne" text="Start" />
+      <Rectangle fx:id="pane2" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="415.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+      <ImageView fitHeight="529.0" fitWidth="929.0" layoutX="-84.0" layoutY="-23.0" opacity="0.37" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/BG_Exit.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#000763" height="98.0" layoutY="407.0" stroke="BLACK" strokeType="INSIDE" width="840.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="75.0" layoutX="548.0" layoutY="286.0" stroke="BLACK" strokeType="INSIDE" width="185.0" />
+      <Button fx:id="start" layoutX="553.0" layoutY="292.0" mnemonicParsing="false" onAction="#switchToSceneOne" prefHeight="42.0" prefWidth="174.0" styleClass="btn" stylesheets="@buttonStyle.css" text="Start" textFill="#f4f3f3">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font></Button>
+      <ImageView fitHeight="386.0" fitWidth="143.0" layoutX="26.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/passengers/blueHoodieGuy.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="welcometxt1" layoutX="141.0" layoutY="74.0" prefHeight="112.0" prefWidth="332.0" text="Welcome" textFill="#fcfcfc">
+         <font>
+            <Font name="System Bold Italic" size="62.0" />
+         </font>
+         <effect>
+            <GaussianBlur radius="63.0" />
+         </effect>
+      </Label>
+      <Label fx:id="welcometxt" layoutX="141.0" layoutY="74.0" prefHeight="112.0" prefWidth="332.0" text="Welcome" textFill="#563a17">
+         <font>
+            <Font name="System Bold Italic" size="62.0" />
+         </font></Label>
+      <Label fx:id="YourSafety1" layoutX="150.0" layoutY="176.0" opacity="0.65" text="Your Safety is Our Number One Concern. " textFill="#f4f9ff">
+         <font>
+            <Font name="Georgia Italic" size="15.0" />
+         </font>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Label>
+      <Label fx:id="YourSafety" layoutX="150.0" layoutY="175.0" text="Your Safety is Our Number One Concern. " textFill="#131313">
+         <font>
+            <Font name="Georgia Italic" size="15.0" />
+         </font></Label>
+      <Label fx:id="WeCare1" layoutX="150.0" layoutY="186.0" opacity="0.68" prefHeight="42.0" prefWidth="290.0" text="We care for you. Happy Trava!" textFill="WHITE">
+         <font>
+            <Font name="Georgia Bold Italic" size="15.0" />
+         </font>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </Label>
+      <Label fx:id="WeCare" layoutX="150.0" layoutY="186.0" prefHeight="42.0" prefWidth="290.0" text="We care for you. Happy Trava!" textFill="#101010">
+         <font>
+            <Font name="Georgia Bold Italic" size="15.0" />
+         </font></Label>
+      <ImageView fx:id="trava1" fitHeight="284.0" fitWidth="307.0" layoutX="491.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/TravaFX_1.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -14,6 +14,9 @@ public class Scene0Application extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Scene0Application.class.getResource("Scene0.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        scene.getStylesheets().add(getClass().getResource("buttonStyle.css").toExternalForm());
+        Scene0Controller scene0Controller = fxmlLoader.getController();
+        scene0Controller.rotate();
         stage.setTitle("Scene0");
         stage.setScene(scene);
         stage.setResizable(false);

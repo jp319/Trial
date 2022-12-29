@@ -1,18 +1,27 @@
 package trailgroup.trial;
 
+import javafx.animation.Interpolator;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class Scene0Controller {
     @FXML public Button start;
+    @FXML public ImageView trava1;
     Stage stage;
     Scene scene;
     String[] passengers = {
@@ -36,6 +45,15 @@ public class Scene0Controller {
             0,
             0
     };
+    public void rotate () {
+        RotateTransition rotation = new RotateTransition();
+        rotation.setNode(trava1);
+        rotation.setDuration(Duration.millis(5000));
+        rotation.setCycleCount(TranslateTransition.INDEFINITE);
+        rotation.setInterpolator(Interpolator.LINEAR);
+        rotation.setByAngle(-360);
+        rotation.play();
+    }
     public void switchToSceneOne (ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Scene1.fxml"));
         Parent root = loader.load();
@@ -50,4 +68,6 @@ public class Scene0Controller {
         stage.setFullScreen(false);
         stage.show();
     }
+
+
 }
