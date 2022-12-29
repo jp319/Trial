@@ -16,6 +16,8 @@ public class Scene0Application extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Scene0");
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.show();
         //Set Window/Stage in the Center of the screen
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();

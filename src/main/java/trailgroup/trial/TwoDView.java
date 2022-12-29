@@ -151,6 +151,8 @@ public class TwoDView {
             scene = new Scene(root);
         }
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.show();
     }
     public void makeFinishedInvisible () {

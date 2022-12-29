@@ -46,6 +46,8 @@ public class Scene0Controller {
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.setResizable(false);
+        stage.setFullScreen(false);
         stage.show();
     }
 }
